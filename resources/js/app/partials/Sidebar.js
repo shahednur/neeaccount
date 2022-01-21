@@ -143,27 +143,27 @@ function Sidebar({
                       <div className="lg:hidden lg:sidebar-expanded:block 2xl:block">
                         <ul className={`pl-9 mt-1 ${!open && 'hidden'}`}>
                           <li className="mb-1 last:mb-0">
-                            <NavLink exact="true" to="/accounting" className="block text-gray-400 hover:text-gray-200 transition duration-150 truncate">
+                            <NavLink exact="true" to="/balance-sheet" className="block text-gray-400 hover:text-gray-200 transition duration-150 truncate">
                               <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">Financial Statements</span>
                             </NavLink>
                           </li>
                           <li className="mb-1 last:mb-0">
-                            <NavLink exact="true" to="/" className="block text-gray-400 hover:text-gray-200 transition duration-150 truncate">
+                            <NavLink exact="true" to="/journal" className="block text-gray-400 hover:text-gray-200 transition duration-150 truncate">
                               <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">Journal Diary</span>
                             </NavLink>
                           </li>
                           <li className="mb-1 last:mb-0">
-                            <NavLink exact="true" to="/" className="block text-gray-400 hover:text-gray-200 transition duration-150 truncate">
+                            <NavLink exact="true" to="/transaction" className="block text-gray-400 hover:text-gray-200 transition duration-150 truncate">
                               <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">Transaction</span>
                             </NavLink>
                           </li>
                           <li className="mb-1 last:mb-0">
-                            <NavLink exact="true" to="/" className="block text-gray-400 hover:text-gray-200 transition duration-150 truncate">
+                            <NavLink exact="true" to="/report" className="block text-gray-400 hover:text-gray-200 transition duration-150 truncate">
                               <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">Report</span>
                             </NavLink>
                           </li>
                           <li className="mb-1 last:mb-0">
-                            <NavLink exact="true" to="/" className="block text-gray-400 hover:text-gray-200 transition duration-150 truncate">
+                            <NavLink exact="true" to="/configuration" className="block text-gray-400 hover:text-gray-200 transition duration-150 truncate">
                               <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">Configuration</span>
                             </NavLink>
                           </li>

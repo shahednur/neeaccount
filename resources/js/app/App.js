@@ -11,7 +11,11 @@ import './charts/ChartjsConfig';
 
 // Import pages
 import Dashboard from './pages/Dashboard';
-import Accounting from './pages/Accounting';
+import BalanceSheet from './pages/BalanceSheet';
+import Journal from './pages/Journal';
+import Report from './pages/Report';
+import Configuration from './pages/Configuration';
+import Transaction from './pages/Transaction';
 
 function App() {
 
@@ -26,7 +30,11 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/accounting" element={<Accounting />} />
+        <Route path="/balance-sheet" element={<BalanceSheet />} />
+        <Route path="/report" element={<Report />} />
+        <Route path="/journal" element={<Journal />} />
+        <Route path="/transaction" element={<Transaction />} />
+        <Route path="/configuration" element={<Configuration />} />
         <Route exact="true" path="/" element={<Dashboard />} />
       </Routes>
     </>

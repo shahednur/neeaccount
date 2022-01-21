@@ -30,8 +30,10 @@
         "chartjs-adapter-moment": "^1.0.0",
         "moment": "^2.29.1",
         "react-chartjs-2": "^4.0.1",
+        "react-datepicker": "^4.6.0",
         "react-flatpickr": "^3.10.7",
         "react-router-dom": "^6.2.1",
+        "react-table": "^7.7.0",
         "react-transition-group": "^4.4.2"
     }
 }
