@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Models\Account;
 
 class AccountController extends Controller
 {
@@ -30,7 +31,7 @@ class AccountController extends Controller
             }
 
             $account = new Account();
-            $account->company_id = $request->company_id;
+            $account->company_id = 5;
             $account->name = $request->name;
             $account->account_key = $request->account_key;
             $account->classification = $request->classification;

@@ -2,27 +2,27 @@ import React from 'react';
 
 const Loader = () => {
   return (
-    <div class="loader">
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
+    <div className="loader">
+    <div className="line"></div>
+    <div className="line"></div>
+    <div className="line"></div>
+    <div className="line"></div>
+    <div className="line"></div>
+    <div className="line"></div>
+    <div className="line"></div>
+    <div className="line"></div>
+    <div className="line"></div>
+    <div className="line"></div>
+    <div className="line"></div>
+    <div className="line"></div>
+    <div className="line"></div>
+    <div className="line"></div>
+    <div className="line"></div>
+    <div className="line"></div>
+    <div className="line"></div>
+    <div className="line"></div>
+    <div className="line"></div>
+    <div className="line"></div>
 </div>
   );
 };

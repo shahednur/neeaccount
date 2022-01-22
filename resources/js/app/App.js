@@ -17,6 +17,8 @@ import Report from './pages/Report';
 import Configuration from './pages/Configuration';
 import Transaction from './pages/Transaction';
 
+import Bus from './utils/Bus';
+
 function App() {
 
   const location = useLocation();
@@ -26,7 +28,7 @@ function App() {
     window.scroll({ top: 0 })
     document.querySelector('html').style.scrollBehavior = ''
   }, [location.pathname]); // triggered on route change
-
+  window.flash = (message, type="success") => Bus.emit('flash', ({message, type}));
   return (
     <>
       <Routes>

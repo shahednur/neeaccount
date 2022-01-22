@@ -1,11 +1,12 @@
 import React, { useState, useMemo } from 'react';
+import { useConfData } from '../hooks/ConfHook';
 
 import Sidebar from '../partials/Sidebar';
 import Header from '../partials/Header';
 import WelcomeBanner from '../partials/dashboard/WelcomeBanner';
 import ConfTable from '../components/ConfTable';
-import getConfData from '../assets/ConfData';
 import ConfForm from '../components/ConfForm';
+import Loader from '../components/Loader';
 
 
 
@@ -13,31 +14,25 @@ function Configuration() {
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const columns = useMemo(
-    () => [
-      {
-        Header: 'Account',
-        accessor: 'account',
-      },
-      {
-        Header: 'Classification',
-        accessor: 'classification',
-      },
-      {
-        Header: 'Account key',
-        accessor: 'accountKey',
-      },
-      {
-        Header:'Delete',
-        accessor: 'delete',
-        Cell: ({value}) => (<button type="button"
-        className="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded inline-flex items-center">Delete</button>)
-      },
-    ],
-    []
-  );
-  const data = useMemo(()=> getConfData(),[])
+  const onSuccess = (data) => {
+    window.flash('All the records has been loaded successfully!', 'success')
+    console.log(data);
+  }
 
+  const onError = (error) => {
+    window.flash(`Something went wrong ! ${error}`, 'error')
+    console.log(error);
+  }
+
+  const { isLoading, data, isError, error, refetch} = useConfData(onSuccess, onError);
+
+
+  if (isLoading) {
+    return <Loader />
+  }
+  if (isError) {
+    return <p>Error: {error.message}</p>
+  }
   return (
     <div className="flex h-screen overflow-hidden">
 
@@ -70,7 +65,48 @@ function Configuration() {
                     <ConfForm />
                 </div>
                 <div className='flex bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"'>
-                  <ConfTable columns={columns} data={data} />
+                <table className="min-w-full border text-center">
+                        <thead className="border-b bg-gray-400">
+                          <tr>
+                            <th scope="col" className="text-sm font-medium text-white px-6 py-4 border-r">
+                              Name
+                            </th>
+                            <th scope="col" className="text-sm font-medium text-white px-6 py-4 border-r">
+                              Classification
+                            </th>
+                            <th scope="col" className="text-sm font-medium text-white px-6 py-4 border-r">
+                              Account key
+                            </th>
+                            <th scope="col" className="text-sm font-medium text-white px-6 py-4">
+                              Delete
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        {
+                          data?.data.map((item, index) => {
+                            return (
+                              <tr className="border-b" key={index}>
+                              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+                                {item.name}
+                              </td>
+                              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+                                {item.classification}
+                              </td>
+                              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+                                {item.account_key}
+                              </td>
+                              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                              <button type="button"
+                        className="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded inline-flex items-center">Delete</button>
+                              </td>
+                            </tr>
+                            )
+                          }
+                          )
+                        }
+                        </tbody>
+                      </table>
                 </div>
               </div>
             </div>

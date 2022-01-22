@@ -6,6 +6,7 @@
     width: 200px;
     height: 200px;
     margin: 0 auto;
+    margin-top: 15%;
     position: relative;
     animation: rotate 6s infinite;
 }
@@ -48,3 +49,24 @@
 @keyframes rotate{
     100%{ transform: rotate(360deg); }
 }
+
+.alert {
+    color: white;
+    border-radius: 10px;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1111;
+    }
+    .alert p {
+    margin: 0;
+    }
+    .alert-error {
+    background: lightcoral;
+    }
+    .alert-success {
+    background: lightgreen;
+    }

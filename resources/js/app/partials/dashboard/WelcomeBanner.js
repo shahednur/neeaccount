@@ -1,8 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import Bus from '../../utils/Bus';
 
 function WelcomeBanner() {
+  const [visibility, setVisibility] = useState(false);
+  const [message, setMessage] = useState('');
+  const [type, setType] = useState('');
+
+  useEffect(() => {
+    let unmounted = false;
+    Bus.addListener('flash',({message, type}) => {
+      setVisibility(true);
+      setMessage(message);
+      setType(type);
+      setTimeout(()=>{
+        setVisibility(false)
+      }, 4000)
+    })
+    return () => { unmounted = true };
+  }, []);
   return (
-    <div className="relative bg-indigo-200 p-4 sm:p-6 rounded-sm overflow-hidden mb-8">
+   <div className="relative bg-indigo-200 p-4 sm:p-6 rounded-sm overflow-hidden mb-8">
 
       {/* Background illustration */}
       <div className="absolute right-0 top-0 -mt-4 mr-16 pointer-events-none hidden xl:block" aria-hidden="true">
@@ -45,13 +62,16 @@ function WelcomeBanner() {
           </g>
         </svg>
       </div>
-
       {/* Content */}
       <div className="relative">
         <h1 className="text-2xl md:text-3xl text-gray-800 font-bold mb-1">Good afternoon, Acme Inc. 👋</h1>
-        <p>Here is what’s happening with your projects today:</p>
-      </div>
-
+        {
+            // visibility && <p className="text-green-600">{message}</p>
+            visibility && (type === 'success')
+            ? <p className="text-green-600">{message}</p>
+            : (type === 'error')? <p className="text-red-600">{message}</p> :''
+        } 
+       </div>
     </div>
   );
 }
