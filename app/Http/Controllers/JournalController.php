@@ -9,6 +9,8 @@ use App\Models\Company;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Response;
 use Carbon\Carbon;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class JournalController extends Controller
 {
@@ -57,6 +59,7 @@ class JournalController extends Controller
             $journal->remark = $request->remark;
             $journal->save();
 
+            Alert::success('Account', 'Account created successfully');
             return response()->json(['message' => 'Account created successfully'], Response::HTTP_CREATED);
         } catch (\Exception $e) {
             return response()->json(['message' => 'An error occurred'], Response::HTTP_INTERNAL_SERVER_ERROR);

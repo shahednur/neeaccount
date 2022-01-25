@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Models\Account;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AccountController extends Controller
 {
@@ -31,13 +32,14 @@ class AccountController extends Controller
             }
 
             $account = new Account();
-            $account->company_id = 5;
+            $account->company_id = 6;
             $account->name = $request->name;
             $account->account_key = $request->account_key;
             $account->classification = $request->classification;
             $account->is_default_account = false;
             $account->save();
 
+            // return Alert::success('Account', 'Account created successfully',Response::HTTP_CREATED);
             return response()->json(['message' => 'Account created successfully'], Response::HTTP_CREATED);
         } catch (\Exception $e) {
             return response()->json(['message' => 'An error occurred'], Response::HTTP_INTERNAL_SERVER_ERROR);
@@ -53,7 +55,7 @@ class AccountController extends Controller
             $account->classification = $request->classification;
             $account->is_default_account = false;
             $account->save();
-
+            
             return response()->json(['message' => 'Account updated successfully'], Response::HTTP_OK);
         } catch (\Exception $e) {
             return response()->json(['message' => 'An error occurred'], Response::HTTP_INTERNAL_SERVER_ERROR);
