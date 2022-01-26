@@ -29,6 +29,12 @@ const TransactionForm = () => {
       remark
     }
     addTransaction(data)
+    Swal.fire({
+      title: 'Error!',
+      text: 'Do you want to continue',
+      icon: 'error',
+      confirmButtonText: 'Cool'
+    })
   }
   return (
   <div className="flex flex-col">

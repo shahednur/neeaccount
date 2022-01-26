@@ -1,11 +1,11 @@
 import React, { useState, useMemo } from 'react';
-import { useConfData } from '../hooks/ConfHook';
+import { useRegionData } from '../hooks/RegionHook';
 
 import Sidebar from '../partials/Sidebar';
 import Header from '../partials/Header';
 import WelcomeBanner from '../partials/dashboard/WelcomeBanner';
 import ConfTable from '../components/ConfTable';
-import ConfForm from '../components/ConfForm';
+import RegionForm from '../components/RegionForm';
 import Loader from '../components/Loader';
 
 
@@ -24,7 +24,7 @@ function Region() {
     console.log(error);
   }
 
-  const { isLoading, data, isError, error, refetch} = useConfData(onSuccess, onError);
+  const { isLoading, data, isError, error, refetch} = useRegionData(onSuccess, onError);
 
 
   if (isLoading) {
@@ -62,7 +62,7 @@ function Region() {
               {/* Card (Customers) */}
               <div className="flex">
                 <div className="flex w-full max-w-xs mr-4">
-                    <ConfForm />
+                    <RegionForm />
                 </div>
                 <div className='flex bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"'>
                 <table className="min-w-full border text-center">
@@ -72,10 +72,7 @@ function Region() {
                               Name
                             </th>
                             <th scope="col" className="text-sm font-medium text-white px-6 py-4 border-r">
-                              Classification
-                            </th>
-                            <th scope="col" className="text-sm font-medium text-white px-6 py-4 border-r">
-                              Account key
+                              Edit
                             </th>
                             <th scope="col" className="text-sm font-medium text-white px-6 py-4">
                               Delete
@@ -91,13 +88,9 @@ function Region() {
                                 {item.name}
                               </td>
                               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
-                                {item.classification}
-                              </td>
-                              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
-                                {item.account_key}
+                              <button type="button" className="bg-red-500 hover:bg-orange-400 text-white font-bold py-1 px-2 rounded inline-flex items-center">Edit</button>
                               </td>
                               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                <button type="button" className="bg-red-500 hover:bg-orange-600 text-white font-bold py-1 px-2 rounded inline-flex items-center">Edit</button>
                                 <button type="button" className="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded inline-flex items-center">Delete</button>
                               </td>
                             </tr>

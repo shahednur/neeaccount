@@ -18,6 +18,7 @@ function Industry() {
     console.log(data);
   }
 
+  
   const onError = (error) => {
     window.flash(`Something went wrong ! ${error}`, 'error')
     console.log(error);
@@ -61,7 +62,7 @@ function Industry() {
               {/* Card (Customers) */}
               <div className="flex">
                 <div className="flex w-full max-w-xs mr-4">
-                    <ConfForm />
+                    {/* <ConfForm /> */}
                 </div>
                 <div className='flex bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"'>
                 <table className="min-w-full border text-center">

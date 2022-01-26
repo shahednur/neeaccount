@@ -17,7 +17,6 @@
     </head>
     <body class="antialiased">
         <div id="root"></div>
-        @include('sweetalert::alert')
         <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>

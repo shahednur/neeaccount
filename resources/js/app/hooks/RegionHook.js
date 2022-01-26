@@ -3,7 +3,7 @@ import { useQuery, useMutation, useQueryClient } from 'react-query'
 import { request } from '../utils/axios'
 
 const fetchRegion = async () => {
-    return request({url:'/region/{id}'})
+    return request({url:'/regions'})
 }
 
 export const useRegionData = (onSuccess, onError) => {
@@ -15,7 +15,7 @@ export const useRegionData = (onSuccess, onError) => {
 
 const addRegion = async (data) => {
     const response = await request({
-        url: 'region/new',
+        url: '/regions/new',
         method:'POST',
         data
     })

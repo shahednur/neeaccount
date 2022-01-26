@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Region;
 use Illuminate\Http\Request;
-use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Http\Response;
 
 class RegionController extends Controller
 {
@@ -15,7 +15,9 @@ class RegionController extends Controller
      */
     public function index()
     {
-        //
+        $regions = Region::get();
+
+        return response()->json($regions);
     }
 
     /**
@@ -36,7 +38,15 @@ class RegionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $region = new Region();
+            $region->name = $request->name;
+            $region->save();
+
+            return response()->json(['success' => 'Region has been created successfully'], Response::HTTP_CREATED);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'An error occurred'], Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
     }
 
     /**
@@ -79,8 +89,15 @@ class RegionController extends Controller
      * @param  \App\Models\Region  $region
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Region $region)
+    public function destroy($id)
     {
-        //
+        try{
+            $region = Region::findOrFail($id);
+            $region->delete();
+
+            return response()->json(['success' => 'Region has been deleted successfully'], Response::HTTP_OK);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'An error occurred'], Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
     }
 }

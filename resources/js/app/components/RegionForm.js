@@ -1,5 +1,5 @@
 import React,{ useState } from 'react';
-import { useAddRegion } from '../hooks/ConfHook';
+import { useAddRegion } from '../hooks/RegionHook';
 
 const RegionForm = () => {
   const [name, setName] = useState('');

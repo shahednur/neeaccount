@@ -5,19 +5,40 @@ import {
   useLocation
 } from 'react-router-dom';
 
+import Loadable from 'react-loadable';
+
 import './css/style.scss';
 
 import './charts/ChartjsConfig';
 
-// Import pages
-import Dashboard from './pages/Dashboard';
-import BalanceSheet from './pages/BalanceSheet';
-import Journal from './pages/Journal';
 import Report from './pages/Report';
-import Configuration from './pages/Configuration';
-import Transaction from './pages/Transaction';
-
+import { SemipolarLoading } from 'react-loadingg'
 import Bus from './utils/Bus';
+
+const Dashboard = Loadable({
+  loader: () => import('./pages/Dashboard'),
+  loading: SemipolarLoading,
+});
+const BalanceSheet = Loadable({
+  loader: () => import('./pages/BalanceSheet'),
+  loading: SemipolarLoading,
+});
+const Journal = Loadable({
+  loader: () => import('./pages/Journal'),
+  loading: SemipolarLoading,
+});
+const Transaction = Loadable({
+  loader: () => import('./pages/Transaction'),
+  loading: SemipolarLoading,
+});
+const Configuration = Loadable({
+  loader: () => import('./pages/Configuration'),
+  loading: SemipolarLoading,
+});
+const Region = Loadable({
+  loader: () => import('./pages/Region'),
+  loading: SemipolarLoading,
+});
 
 function App() {
 
@@ -32,6 +53,7 @@ function App() {
   return (
     <>
       <Routes>
+        <Route path="/region" element={<Region />} />
         <Route path="/balance-sheet" element={<BalanceSheet />} />
         <Route path="/report" element={<Report />} />
         <Route path="/journal" element={<Journal />} />

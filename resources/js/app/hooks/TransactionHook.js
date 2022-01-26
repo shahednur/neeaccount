@@ -2,6 +2,7 @@ import { useQuery, useMutation, useQueryClient } from 'react-query'
 
 import { request } from '../utils/axios'
 
+
 const fetchJournal = async () => {
     return request({url:'/journal/5'})
 }
