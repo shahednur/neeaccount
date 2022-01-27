@@ -39,6 +39,30 @@ const Region = Loadable({
   loader: () => import('./pages/Region'),
   loading: SemipolarLoading,
 });
+const Country = Loadable({
+  loader: () => import('./pages/Country'),
+  loading: SemipolarLoading,
+});
+const Unit = Loadable({
+  loader: () => import('./pages/Unit'),
+  loading: SemipolarLoading,
+});
+const Industry = Loadable({
+  loader: () => import('./pages/Industry'),
+  loading: SemipolarLoading,
+});
+const Currency = Loadable({
+  loader: () => import('./pages/Currency'),
+  loading: SemipolarLoading,
+});
+const Customer = Loadable({
+  loader: () => import('./pages/Customer'),
+  loading: SemipolarLoading,
+});
+const AddCustomer = Loadable({
+  loader: () => import('./pages/AddCustomer'),
+  loading: SemipolarLoading,
+});
 
 function App() {
 
@@ -53,6 +77,12 @@ function App() {
   return (
     <>
       <Routes>
+        <Route path="/add-customers" element={<AddCustomer />} />
+        <Route path="/customers" element={<Customer />} />
+        <Route path="/currency" element={<Currency />} />
+        <Route path="/industry" element={<Industry />} />
+        <Route path="/unit" element={<Unit />} />
+        <Route path="/country" element={<Country />} />
         <Route path="/region" element={<Region />} />
         <Route path="/balance-sheet" element={<BalanceSheet />} />
         <Route path="/report" element={<Report />} />

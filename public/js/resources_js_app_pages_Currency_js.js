@@ -1,4 +1,4 @@
-(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_app_pages_Region_js"],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_app_pages_Currency_js"],{
 
 /***/ "./node_modules/@babel/runtime/regenerator/index.js":
 /*!**********************************************************!*\
@@ -11,10 +11,10 @@ module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/
 
 /***/ }),
 
-/***/ "./resources/js/app/components/ConfTable.js":
-/*!**************************************************!*\
-  !*** ./resources/js/app/components/ConfTable.js ***!
-  \**************************************************/
+/***/ "./resources/js/app/components/CurrencyForm.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/app/components/CurrencyForm.js ***!
+  \*****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -23,102 +23,91 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_table__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-table */ "./node_modules/react-table/index.js");
-/* harmony import */ var react_table__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_table__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _hooks_CurrencyHook__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../hooks/CurrencyHook */ "./resources/js/app/hooks/CurrencyHook.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
 
 
-function ConfTable(_ref) {
-  var data = _ref.data;
-  // Use the state and functions returned from useTable to build your UI
-  // const {
-  //   getTableProps,
-  //   getTableBodyProps,
-  //   headerGroups,
-  //   rows,
-  //   prepareRow,
-  // } = useTable({
-  //   columns,
-  //   data,
-  // });
-  return (
-    /*#__PURE__*/
-    // <table {...getTableProps()} className="min-w-full divide-y divide-gray-200 rounded">
-    //   <thead className="bg-gray-50">
-    //     {headerGroups.map(headerGroup => (
-    //       <tr {...headerGroup.getHeaderGroupProps()}>
-    //         {headerGroup.headers.map(column => (
-    //           <th {...column.getHeaderProps()} scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{column.render("Header")}</th>
-    //         ))}
-    //       </tr>
-    //     ))}
-    //   </thead>
-    //   <tbody {...getTableBodyProps()} className="bg-white divide-y divide-gray-200">
-    //     {rows.map((row, i) => {
-    //       prepareRow(row);
-    //       return (
-    //         <tr {...row.getRowProps()}>
-    //           {row.cells.map(cell => {
-    //             return <td {...cell.getCellProps()} className="px-6 py-4 whitespace-nowrap">{cell.render("Cell")}</td>;
-    //           })}
-    //         </tr>
-    //       );
-    //     })}
-    //   </tbody>
-    // </table>
-    (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("table", {
-      "class": "min-w-full border text-center",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("thead", {
-        "class": "border-b",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("tr", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
-            scope: "col",
-            "class": "text-sm font-medium text-gray-900 px-6 py-4 border-r",
-            children: "Name"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
-            scope: "col",
-            "class": "text-sm font-medium text-gray-900 px-6 py-4 border-r",
-            children: "Classification"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
-            scope: "col",
-            "class": "text-sm font-medium text-gray-900 px-6 py-4 border-r",
-            children: "Account key"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
-            scope: "col",
-            "class": "text-sm font-medium text-gray-900 px-6 py-4",
-            children: "Delete"
-          })]
+
+
+var CurrencyForm = function CurrencyForm() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState2 = _slicedToArray(_useState, 2),
+      name = _useState2[0],
+      setName = _useState2[1];
+
+  var onSuccess = function onSuccess(data) {
+    window.flash('Unit has been created successfully!', 'success');
+    console.log(data);
+  };
+
+  var onError = function onError(error) {
+    window.flash("Unit can not be created! ".concat(error), 'error');
+    console.log(error);
+  };
+
+  var _useAddCurrency = (0,_hooks_CurrencyHook__WEBPACK_IMPORTED_MODULE_1__.useAddCurrency)(onSuccess, onError),
+      addCurrency = _useAddCurrency.mutate;
+
+  var handleAddConfClick = function handleAddConfClick() {
+    var data = {
+      name: name
+    };
+    addCurrency(data);
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
+      className: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "mb-4",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+          className: "text-2xl font-medium leading-tight mt-0 mb-2 text-blue-600",
+          children: "Currency"
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("tbody", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("tr", {
-          "class": "border-b",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
-            "class": "text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r",
-            children: data.name
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
-            "class": "text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r",
-            children: data.classification
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
-            "class": "text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r",
-            children: data.account_key
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
-            "class": "text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-              type: "button",
-              className: "bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded inline-flex items-center",
-              children: "Delete"
-            })
-          })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "mb-4",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+          className: "block text-gray-700 text-sm font-bold mb-2",
+          htmlFor: "currency",
+          children: "Currency Name"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+          value: name,
+          onChange: function onChange(e) {
+            return setName(e.target.value);
+          },
+          className: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+          id: "currency",
+          type: "text",
+          placeholder: "Currency Name"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "flex items-center justify-between",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+          onClick: handleAddConfClick,
+          className: "bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline",
+          type: "button",
+          children: "Register"
         })
       })]
     })
-  );
-}
+  });
+};
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ConfTable);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CurrencyForm);
 
 /***/ }),
 
@@ -190,117 +179,17 @@ var Loader = function Loader() {
 
 /***/ }),
 
-/***/ "./resources/js/app/components/RegionForm.js":
-/*!***************************************************!*\
-  !*** ./resources/js/app/components/RegionForm.js ***!
-  \***************************************************/
+/***/ "./resources/js/app/hooks/CurrencyHook.js":
+/*!************************************************!*\
+  !*** ./resources/js/app/hooks/CurrencyHook.js ***!
+  \************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _hooks_RegionHook__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../hooks/RegionHook */ "./resources/js/app/hooks/RegionHook.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
-
-
-
-
-var RegionForm = function RegionForm() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
-      _useState2 = _slicedToArray(_useState, 2),
-      name = _useState2[0],
-      setName = _useState2[1];
-
-  var onSuccess = function onSuccess(data) {
-    window.flash('Region has been created successfully!', 'success');
-    console.log(data);
-  };
-
-  var onError = function onError(error) {
-    window.flash("Region can not be created! ".concat(error), 'error');
-    console.log(error);
-  };
-
-  var _useAddRegion = (0,_hooks_RegionHook__WEBPACK_IMPORTED_MODULE_1__.useAddRegion)(onSuccess, onError),
-      addRegion = _useAddRegion.mutate;
-
-  var handleAddConfClick = function handleAddConfClick() {
-    var data = {
-      name: name
-    };
-    addRegion(data);
-  };
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
-      className: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "mb-4",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
-          className: "text-2xl font-medium leading-tight mt-0 mb-2 text-blue-600",
-          children: "Regions"
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "mb-4",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          className: "block text-gray-700 text-sm font-bold mb-2",
-          htmlFor: "region",
-          children: "Region"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-          value: name,
-          onChange: function onChange(e) {
-            return setName(e.target.value);
-          },
-          className: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
-          id: "region",
-          type: "text",
-          placeholder: "Region"
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "flex items-center justify-between",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-          onClick: handleAddConfClick,
-          className: "bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline",
-          type: "button",
-          children: "Register"
-        })
-      })]
-    })
-  });
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RegionForm);
-
-/***/ }),
-
-/***/ "./resources/js/app/hooks/RegionHook.js":
-/*!**********************************************!*\
-  !*** ./resources/js/app/hooks/RegionHook.js ***!
-  \**********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "useRegionData": () => (/* binding */ useRegionData),
-/* harmony export */   "useAddRegion": () => (/* binding */ useAddRegion)
+/* harmony export */   "useCurrencyData": () => (/* binding */ useCurrencyData),
+/* harmony export */   "useAddCurrency": () => (/* binding */ useAddCurrency)
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
@@ -315,14 +204,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
-var fetchRegion = /*#__PURE__*/function () {
+var fetchCurrency = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
             return _context.abrupt("return", (0,_utils_axios__WEBPACK_IMPORTED_MODULE_2__.request)({
-              url: '/regions'
+              url: '/currency'
             }));
 
           case 1:
@@ -333,19 +222,19 @@ var fetchRegion = /*#__PURE__*/function () {
     }, _callee);
   }));
 
-  return function fetchRegion() {
+  return function fetchCurrency() {
     return _ref.apply(this, arguments);
   };
 }();
 
-var useRegionData = function useRegionData(onSuccess, onError) {
-  return (0,react_query__WEBPACK_IMPORTED_MODULE_1__.useQuery)('region-data', fetchRegion, {
+var useCurrencyData = function useCurrencyData(onSuccess, onError) {
+  return (0,react_query__WEBPACK_IMPORTED_MODULE_1__.useQuery)('currency-data', fetchCurrency, {
     onSuccess: onSuccess,
     onError: onError
   });
 };
 
-var addRegion = /*#__PURE__*/function () {
+var addCurrency = /*#__PURE__*/function () {
   var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(data) {
     var response;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
@@ -354,7 +243,7 @@ var addRegion = /*#__PURE__*/function () {
           case 0:
             _context2.next = 2;
             return (0,_utils_axios__WEBPACK_IMPORTED_MODULE_2__.request)({
-              url: '/regions/new',
+              url: 'currency/new',
               method: 'POST',
               data: data
             });
@@ -371,16 +260,16 @@ var addRegion = /*#__PURE__*/function () {
     }, _callee2);
   }));
 
-  return function addRegion(_x) {
+  return function addCurrency(_x) {
     return _ref2.apply(this, arguments);
   };
 }();
 
-var useAddRegion = function useAddRegion() {
+var useAddCurrency = function useAddCurrency() {
   var queryClient = (0,react_query__WEBPACK_IMPORTED_MODULE_1__.useQueryClient)();
-  return (0,react_query__WEBPACK_IMPORTED_MODULE_1__.useMutation)(addRegion, {
+  return (0,react_query__WEBPACK_IMPORTED_MODULE_1__.useMutation)(addCurrency, {
     onSuccess: function onSuccess(data) {
-      queryClient.cache.setQueryData('regions', data);
+      queryClient.cache.setQueryData('currencies', data);
     },
     onError: function onError(error) {
       console.log(error);
@@ -390,10 +279,10 @@ var useAddRegion = function useAddRegion() {
 
 /***/ }),
 
-/***/ "./resources/js/app/pages/Region.js":
-/*!******************************************!*\
-  !*** ./resources/js/app/pages/Region.js ***!
-  \******************************************/
+/***/ "./resources/js/app/pages/Currency.js":
+/*!********************************************!*\
+  !*** ./resources/js/app/pages/Currency.js ***!
+  \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -402,14 +291,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _hooks_RegionHook__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../hooks/RegionHook */ "./resources/js/app/hooks/RegionHook.js");
+/* harmony import */ var _hooks_CurrencyHook__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../hooks/CurrencyHook */ "./resources/js/app/hooks/CurrencyHook.js");
 /* harmony import */ var _partials_Sidebar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../partials/Sidebar */ "./resources/js/app/partials/Sidebar.js");
 /* harmony import */ var _partials_Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../partials/Header */ "./resources/js/app/partials/Header.js");
 /* harmony import */ var _partials_dashboard_WelcomeBanner__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../partials/dashboard/WelcomeBanner */ "./resources/js/app/partials/dashboard/WelcomeBanner.js");
-/* harmony import */ var _components_ConfTable__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/ConfTable */ "./resources/js/app/components/ConfTable.js");
-/* harmony import */ var _components_RegionForm__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/RegionForm */ "./resources/js/app/components/RegionForm.js");
-/* harmony import */ var _components_Loader__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Loader */ "./resources/js/app/components/Loader.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_CurrencyForm__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/CurrencyForm */ "./resources/js/app/components/CurrencyForm.js");
+/* harmony import */ var _components_Loader__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Loader */ "./resources/js/app/components/Loader.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -432,8 +320,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
-function Region() {
+function Currency() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
       sidebarOpen = _useState2[0],
@@ -449,88 +336,88 @@ function Region() {
     console.log(error);
   };
 
-  var _useRegionData = (0,_hooks_RegionHook__WEBPACK_IMPORTED_MODULE_1__.useRegionData)(onSuccess, onError),
-      isLoading = _useRegionData.isLoading,
-      data = _useRegionData.data,
-      isError = _useRegionData.isError,
-      error = _useRegionData.error,
-      refetch = _useRegionData.refetch;
+  var _useCurrencyData = (0,_hooks_CurrencyHook__WEBPACK_IMPORTED_MODULE_1__.useCurrencyData)(onSuccess, onError),
+      isLoading = _useCurrencyData.isLoading,
+      data = _useCurrencyData.data,
+      isError = _useCurrencyData.isError,
+      error = _useCurrencyData.error,
+      refetch = _useCurrencyData.refetch;
 
   if (isLoading) {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Loader__WEBPACK_IMPORTED_MODULE_7__["default"], {});
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Loader__WEBPACK_IMPORTED_MODULE_6__["default"], {});
   }
 
   if (isError) {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("p", {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("p", {
       children: ["Error: ", error.message]
     });
   }
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
     className: "flex h-screen overflow-hidden",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_partials_Sidebar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_partials_Sidebar__WEBPACK_IMPORTED_MODULE_2__["default"], {
       sidebarOpen: sidebarOpen,
       setSidebarOpen: setSidebarOpen
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
       className: "relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_partials_Header__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_partials_Header__WEBPACK_IMPORTED_MODULE_3__["default"], {
         sidebarOpen: sidebarOpen,
         setSidebarOpen: setSidebarOpen
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("main", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("main", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
           className: "px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_partials_dashboard_WelcomeBanner__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_partials_dashboard_WelcomeBanner__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
             className: "sm:flex sm:justify-between sm:items-center mb-8",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
               className: "grid grid-flow-col  sm:auto-cols-max justify-start sm:justify-end gap-2"
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
             className: "container mx-auto",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
               className: "flex flex-row",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                 className: "flex",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
                   className: "flex w-full max-w-xs mr-4",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_RegionForm__WEBPACK_IMPORTED_MODULE_6__["default"], {})
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_CurrencyForm__WEBPACK_IMPORTED_MODULE_5__["default"], {})
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
                   className: "flex bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4\"",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("table", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("table", {
                     className: "min-w-full border text-center",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("thead", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("thead", {
                       className: "border-b bg-gray-400",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("tr", {
-                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("tr", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                           scope: "col",
                           className: "text-sm font-medium text-white px-6 py-4 border-r",
-                          children: "Name"
-                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
+                          children: "Currency Name"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                           scope: "col",
                           className: "text-sm font-medium text-white px-6 py-4 border-r",
                           children: "Edit"
-                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("th", {
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                           scope: "col",
                           className: "text-sm font-medium text-white px-6 py-4",
                           children: "Delete"
                         })]
                       })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("tbody", {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("tbody", {
                       children: data === null || data === void 0 ? void 0 : data.data.map(function (item, index) {
-                        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("tr", {
+                        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("tr", {
                           className: "border-b",
-                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("td", {
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
                             className: "text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r",
                             children: item.name
-                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("td", {
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
                             className: "text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r",
-                            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
                               type: "button",
                               className: "bg-orange-500 hover:bg-orange-600 text-white font-bold py-1 px-2 rounded inline-flex items-center",
                               children: "Edit"
                             })
-                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("td", {
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
                             className: "text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap",
-                            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
                               type: "button",
                               className: "bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded inline-flex items-center",
                               children: "Delete"
@@ -550,7 +437,7 @@ function Region() {
   });
 }
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Region);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Currency);
 
 /***/ }),
 

@@ -3,7 +3,7 @@ import { useQuery, useMutation, useQueryClient } from 'react-query'
 import { request } from '../utils/axios'
 
 const fetchCurrency = async () => {
-    return request({url:'/currency/{id}'})
+    return request({url:'/currency'})
 }
 
 export const useCurrencyData = (onSuccess, onError) => {

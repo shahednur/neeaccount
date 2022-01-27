@@ -5741,6 +5741,42 @@ var Region = react_loadable__WEBPACK_IMPORTED_MODULE_1___default()({
   },
   loading: react_loadingg__WEBPACK_IMPORTED_MODULE_5__.SemipolarLoading
 });
+var Country = react_loadable__WEBPACK_IMPORTED_MODULE_1___default()({
+  loader: function loader() {
+    return __webpack_require__.e(/*! import() */ "resources_js_app_pages_Country_js").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Country */ "./resources/js/app/pages/Country.js"));
+  },
+  loading: react_loadingg__WEBPACK_IMPORTED_MODULE_5__.SemipolarLoading
+});
+var Unit = react_loadable__WEBPACK_IMPORTED_MODULE_1___default()({
+  loader: function loader() {
+    return __webpack_require__.e(/*! import() */ "resources_js_app_pages_Unit_js").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Unit */ "./resources/js/app/pages/Unit.js"));
+  },
+  loading: react_loadingg__WEBPACK_IMPORTED_MODULE_5__.SemipolarLoading
+});
+var Industry = react_loadable__WEBPACK_IMPORTED_MODULE_1___default()({
+  loader: function loader() {
+    return __webpack_require__.e(/*! import() */ "resources_js_app_pages_Industry_js").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Industry */ "./resources/js/app/pages/Industry.js"));
+  },
+  loading: react_loadingg__WEBPACK_IMPORTED_MODULE_5__.SemipolarLoading
+});
+var Currency = react_loadable__WEBPACK_IMPORTED_MODULE_1___default()({
+  loader: function loader() {
+    return __webpack_require__.e(/*! import() */ "resources_js_app_pages_Currency_js").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Currency */ "./resources/js/app/pages/Currency.js"));
+  },
+  loading: react_loadingg__WEBPACK_IMPORTED_MODULE_5__.SemipolarLoading
+});
+var Customer = react_loadable__WEBPACK_IMPORTED_MODULE_1___default()({
+  loader: function loader() {
+    return __webpack_require__.e(/*! import() */ "resources_js_app_pages_Customer_js").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Customer */ "./resources/js/app/pages/Customer.js"));
+  },
+  loading: react_loadingg__WEBPACK_IMPORTED_MODULE_5__.SemipolarLoading
+});
+var AddCustomer = react_loadable__WEBPACK_IMPORTED_MODULE_1___default()({
+  loader: function loader() {
+    return __webpack_require__.e(/*! import() */ "resources_js_app_pages_AddCustomer_js").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/AddCustomer */ "./resources/js/app/pages/AddCustomer.js"));
+  },
+  loading: react_loadingg__WEBPACK_IMPORTED_MODULE_5__.SemipolarLoading
+});
 
 function App() {
   var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_8__.useLocation)();
@@ -5763,6 +5799,24 @@ function App() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Routes, {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
+        path: "/add-customers",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(AddCustomer, {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
+        path: "/customers",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(Customer, {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
+        path: "/currency",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(Currency, {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
+        path: "/industry",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(Industry, {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
+        path: "/unit",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(Unit, {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
+        path: "/country",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(Country, {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
         path: "/region",
         element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(Region, {})
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
@@ -6946,7 +7000,7 @@ function Sidebar(_ref) {
                         className: "mb-1 last:mb-0",
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.NavLink, {
                           exact: "true",
-                          to: "/all-customers",
+                          to: "/customers",
                           className: "block text-gray-400 hover:text-gray-200 transition duration-150 truncate",
                           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
                             className: "text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200",
@@ -6957,7 +7011,7 @@ function Sidebar(_ref) {
                         className: "mb-1 last:mb-0",
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.NavLink, {
                           exact: "true",
-                          to: "/add-customer",
+                          to: "/add-customers",
                           className: "block text-gray-400 hover:text-gray-200 transition duration-150 truncate",
                           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
                             className: "text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200",
@@ -102823,7 +102877,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_app_pages_Dashboard_js":1,"resources_js_app_pages_BalanceSheet_js":1,"resources_js_app_pages_Journal_js":1,"resources_js_app_pages_Transaction_js":1,"resources_js_app_pages_Configuration_js":1,"resources_js_app_pages_Region_js":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_app_pages_Dashboard_js":1,"resources_js_app_pages_BalanceSheet_js":1,"resources_js_app_pages_Journal_js":1,"resources_js_app_pages_Transaction_js":1,"resources_js_app_pages_Configuration_js":1,"resources_js_app_pages_Region_js":1,"resources_js_app_pages_Country_js":1,"resources_js_app_pages_Unit_js":1,"resources_js_app_pages_Industry_js":1,"resources_js_app_pages_Currency_js":1,"resources_js_app_pages_Customer_js":1,"resources_js_app_pages_AddCustomer_js":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

@@ -3,7 +3,7 @@ import { useQuery, useMutation, useQueryClient } from 'react-query'
 import { request } from '../utils/axios'
 
 const fetchIndustry = async () => {
-    return request({url:'/industry/{id}'})
+    return request({url:'/industry'})
 }
 
 export const useIndustryData = (onSuccess, onError) => {

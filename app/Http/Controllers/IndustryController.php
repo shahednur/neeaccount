@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Industry;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class IndustryController extends Controller
 {
@@ -14,7 +15,9 @@ class IndustryController extends Controller
      */
     public function index()
     {
-        //
+        $industry = Industry::get();
+
+        return response()->json($industry, Response::HTTP_OK);
     }
 
     /**
@@ -35,7 +38,15 @@ class IndustryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $industry = new Industry();
+            $industry->name = $request->name;
+            $industry->save();
+
+            return response()->json(['success','Industry has been created successfully!'], Response::HTTP_CREATED);
+        }catch (\Exception $e) {
+            return response()->json(['message' => 'An error occurred'], Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
     }
 
     /**

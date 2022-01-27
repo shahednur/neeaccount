@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Region;
+use App\Models\Unit;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class RegionController extends Controller
+class UnitController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class RegionController extends Controller
      */
     public function index()
     {
-        $regions = Region::get();
+        $unit = Unit::get();
 
-        return response()->json($regions, Response::HTTP_OK);
+        return response()->json($unit, Response::HTTP_OK);
     }
 
     /**
@@ -39,12 +39,12 @@ class RegionController extends Controller
     public function store(Request $request)
     {
         try{
-            $region = new Region();
-            $region->name = $request->name;
-            $region->save();
+            $unit = new Unit();
+            $unit->name = $request->name;
+            $unit->save();
 
-            return response()->json(['success' => 'Region has been created successfully'], Response::HTTP_CREATED);
-        } catch (\Exception $e) {
+            return response()->json(['success' => 'Unit has been created successfully'], Response::HTTP_CREATED);
+        } catch(\Exception $e) {
             return response()->json(['message' => 'An error occurred'], Response::HTTP_INTERNAL_SERVER_ERROR);
         }
     }
@@ -52,10 +52,10 @@ class RegionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Region  $region
+     * @param  \App\Models\Unit  $unit
      * @return \Illuminate\Http\Response
      */
-    public function show(Region $region)
+    public function show(Unit $unit)
     {
         //
     }
@@ -63,10 +63,10 @@ class RegionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Region  $region
+     * @param  \App\Models\Unit  $unit
      * @return \Illuminate\Http\Response
      */
-    public function edit(Region $region)
+    public function edit(Unit $unit)
     {
         //
     }
@@ -75,10 +75,10 @@ class RegionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Region  $region
+     * @param  \App\Models\Unit  $unit
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Region $region)
+    public function update(Request $request, Unit $unit)
     {
         //
     }
@@ -86,18 +86,11 @@ class RegionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Region  $region
+     * @param  \App\Models\Unit  $unit
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Unit $unit)
     {
-        try{
-            $region = Region::findOrFail($id);
-            $region->delete();
-
-            return response()->json(['success' => 'Region has been deleted successfully'], Response::HTTP_OK);
-        } catch (\Exception $e) {
-            return response()->json(['message' => 'An error occurred'], Response::HTTP_INTERNAL_SERVER_ERROR);
-        }
+        //
     }
 }

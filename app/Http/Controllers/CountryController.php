@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Country;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class CountryController extends Controller
 {
@@ -14,7 +15,9 @@ class CountryController extends Controller
      */
     public function index()
     {
-        //
+        $country = Country::get();
+
+        return response()->json($country, Response::HTTP_OK);
     }
 
     /**
@@ -35,7 +38,16 @@ class CountryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $country = new Country();
+            $country->code = $request->code;
+            $country->name = $request->name;
+            $country->save();
+
+            return response()->json(['success' => 'Country has been created successfully'], Response::HTTP_CREATED);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'An error occurred'], Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
     }
 
     /**
@@ -78,8 +90,15 @@ class CountryController extends Controller
      * @param  \App\Models\Country  $country
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Country $country)
+    public function destroy($id)
     {
-        //
+        try{
+            $country = Country::findOrFail($id);
+            $country->delete();
+
+            return response()->json(['success' => 'Country has been deleted successfully'], Response::HTTP_OK);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'An error occurred'], Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
     }
 }

@@ -1,16 +1,15 @@
 import React, { useState, useMemo } from 'react';
-import { useRegionData } from '../hooks/RegionHook';
+import { useCurrencyData } from '../hooks/CurrencyHook';
 
 import Sidebar from '../partials/Sidebar';
 import Header from '../partials/Header';
 import WelcomeBanner from '../partials/dashboard/WelcomeBanner';
-import ConfTable from '../components/ConfTable';
-import RegionForm from '../components/RegionForm';
+import CurrencyForm from '../components/CurrencyForm';
 import Loader from '../components/Loader';
 
 
 
-function Region() {
+function Currency() {
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -24,7 +23,7 @@ function Region() {
     console.log(error);
   }
 
-  const { isLoading, data, isError, error, refetch} = useRegionData(onSuccess, onError);
+  const { isLoading, data, isError, error, refetch} = useCurrencyData(onSuccess, onError);
 
 
   if (isLoading) {
@@ -62,14 +61,14 @@ function Region() {
               {/* Card (Customers) */}
               <div className="flex">
                 <div className="flex w-full max-w-xs mr-4">
-                    <RegionForm />
+                    <CurrencyForm />
                 </div>
                 <div className='flex bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"'>
                 <table className="min-w-full border text-center">
                         <thead className="border-b bg-gray-400">
                           <tr>
                             <th scope="col" className="text-sm font-medium text-white px-6 py-4 border-r">
-                              Name
+                              Currency Name
                             </th>
                             <th scope="col" className="text-sm font-medium text-white px-6 py-4 border-r">
                               Edit
@@ -111,4 +110,4 @@ function Region() {
   );
 }
 
-export default Region;
+export default Currency;

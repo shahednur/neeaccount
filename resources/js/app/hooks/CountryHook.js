@@ -3,7 +3,7 @@ import { useQuery, useMutation, useQueryClient } from 'react-query'
 import { request } from '../utils/axios'
 
 const fetchCountry = async () => {
-    return request({url:'/country/{id}'})
+    return request({url:'/countries'})
 }
 
 export const useCountryData = (onSuccess, onError) => {
@@ -15,7 +15,7 @@ export const useCountryData = (onSuccess, onError) => {
 
 const addCountry = async (data) => {
     const response = await request({
-        url: 'country/new',
+        url: '/countries/new',
         method:'POST',
         data
     })

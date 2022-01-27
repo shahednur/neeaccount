@@ -3,7 +3,7 @@ import { useQuery, useMutation, useQueryClient } from 'react-query'
 import { request } from '../utils/axios'
 
 const fetchUnit = async () => {
-    return request({url:'/unit/{id}'})
+    return request({url:'/units'})
 }
 
 export const useUnitData = (onSuccess, onError) => {
@@ -15,7 +15,7 @@ export const useUnitData = (onSuccess, onError) => {
 
 const addUnit = async (data) => {
     const response = await request({
-        url: 'unit/new',
+        url: 'units/new',
         method:'POST',
         data
     })

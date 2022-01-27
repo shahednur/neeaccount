@@ -1,16 +1,16 @@
 import React, { useState, useMemo } from 'react';
-import { useRegionData } from '../hooks/RegionHook';
+import { useConfData } from '../hooks/ConfHook';
 
 import Sidebar from '../partials/Sidebar';
 import Header from '../partials/Header';
 import WelcomeBanner from '../partials/dashboard/WelcomeBanner';
 import ConfTable from '../components/ConfTable';
-import RegionForm from '../components/RegionForm';
+import ConfForm from '../components/ConfForm';
 import Loader from '../components/Loader';
 
 
 
-function Region() {
+function Customer() {
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -24,7 +24,7 @@ function Region() {
     console.log(error);
   }
 
-  const { isLoading, data, isError, error, refetch} = useRegionData(onSuccess, onError);
+  const { isLoading, data, isError, error, refetch} = useConfData(onSuccess, onError);
 
 
   if (isLoading) {
@@ -61,9 +61,6 @@ function Region() {
             <div className="flex flex-row">
               {/* Card (Customers) */}
               <div className="flex">
-                <div className="flex w-full max-w-xs mr-4">
-                    <RegionForm />
-                </div>
                 <div className='flex bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"'>
                 <table className="min-w-full border text-center">
                         <thead className="border-b bg-gray-400">
@@ -72,7 +69,25 @@ function Region() {
                               Name
                             </th>
                             <th scope="col" className="text-sm font-medium text-white px-6 py-4 border-r">
-                              Edit
+                              Email
+                            </th>
+                            <th scope="col" className="text-sm font-medium text-white px-6 py-4 border-r">
+                              Phone
+                            </th>
+                            <th scope="col" className="text-sm font-medium text-white px-6 py-4 border-r">
+                              Zip Code
+                            </th>
+                            <th scope="col" className="text-sm font-medium text-white px-6 py-4 border-r">
+                              City
+                            </th>
+                            <th scope="col" className="text-sm font-medium text-white px-6 py-4 border-r">
+                              Region
+                            </th>
+                            <th scope="col" className="text-sm font-medium text-white px-6 py-4 border-r">
+                              Country
+                            </th>
+                            <th scope="col" className="text-sm font-medium text-white px-6 py-4 border-r">
+                              Industry
                             </th>
                             <th scope="col" className="text-sm font-medium text-white px-6 py-4">
                               Delete
@@ -88,10 +103,14 @@ function Region() {
                                 {item.name}
                               </td>
                               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
-                              <button type="button" className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-1 px-2 rounded inline-flex items-center">Edit</button>
+                                {item.classification}
+                              </td>
+                              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+                                {item.account_key}
                               </td>
                               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                <button type="button" className="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded inline-flex items-center">Delete</button>
+                              <button type="button"
+                        className="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded inline-flex items-center">Delete</button>
                               </td>
                             </tr>
                             )
@@ -111,4 +130,4 @@ function Region() {
   );
 }
 
-export default Region;
+export default Customer;

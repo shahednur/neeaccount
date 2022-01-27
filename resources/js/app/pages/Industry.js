@@ -1,15 +1,15 @@
 import React, { useState, useMemo } from 'react';
-import { useConfData } from '../hooks/ConfHook';
+import { useIndustryData } from '../hooks/IndustryHook';
 
 import Sidebar from '../partials/Sidebar';
 import Header from '../partials/Header';
 import WelcomeBanner from '../partials/dashboard/WelcomeBanner';
-import ConfForm from '../components/ConfForm';
+import IndustryForm from '../components/IndustryForm';
 import Loader from '../components/Loader';
 
 
 
-function Industry() {
+function Unit() {
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -18,13 +18,12 @@ function Industry() {
     console.log(data);
   }
 
-  
   const onError = (error) => {
     window.flash(`Something went wrong ! ${error}`, 'error')
     console.log(error);
   }
 
-  const { isLoading, data, isError, error, refetch} = useConfData(onSuccess, onError);
+  const { isLoading, data, isError, error, refetch} = useIndustryData(onSuccess, onError);
 
 
   if (isLoading) {
@@ -62,20 +61,17 @@ function Industry() {
               {/* Card (Customers) */}
               <div className="flex">
                 <div className="flex w-full max-w-xs mr-4">
-                    {/* <ConfForm /> */}
+                    <IndustryForm />
                 </div>
                 <div className='flex bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"'>
                 <table className="min-w-full border text-center">
                         <thead className="border-b bg-gray-400">
                           <tr>
                             <th scope="col" className="text-sm font-medium text-white px-6 py-4 border-r">
-                              Name
+                              Unit Name
                             </th>
                             <th scope="col" className="text-sm font-medium text-white px-6 py-4 border-r">
-                              Classification
-                            </th>
-                            <th scope="col" className="text-sm font-medium text-white px-6 py-4 border-r">
-                              Account key
+                              Edit
                             </th>
                             <th scope="col" className="text-sm font-medium text-white px-6 py-4">
                               Delete
@@ -91,13 +87,9 @@ function Industry() {
                                 {item.name}
                               </td>
                               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
-                                {item.classification}
-                              </td>
-                              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
-                                {item.account_key}
+                              <button type="button" className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-1 px-2 rounded inline-flex items-center">Edit</button>
                               </td>
                               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                <button type="button" className="bg-red-500 hover:bg-orange-600 text-white font-bold py-1 px-2 rounded inline-flex items-center">Edit</button>
                                 <button type="button" className="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded inline-flex items-center">Delete</button>
                               </td>
                             </tr>
@@ -118,4 +110,4 @@ function Industry() {
   );
 }
 
-export default Industry;
+export default Unit;
