@@ -63,6 +63,10 @@ const AddCustomer = Loadable({
   loader: () => import('./pages/AddCustomer'),
   loading: SemipolarLoading,
 });
+const AddMaterial = Loadable({
+  loader: () => import('./pages/AddMaterial'),
+  loading: SemipolarLoading,
+});
 
 function App() {
 
@@ -77,6 +81,7 @@ function App() {
   return (
     <>
       <Routes>
+        <Route path="/add-material" element={<AddMaterial />} />
         <Route path="/add-customers" element={<AddCustomer />} />
         <Route path="/customers" element={<Customer />} />
         <Route path="/currency" element={<Currency />} />

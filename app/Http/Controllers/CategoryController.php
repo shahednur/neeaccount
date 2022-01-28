@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Material;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class MaterialController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class MaterialController extends Controller
      */
     public function index()
     {
-        $materials = Material::with('unit')->get();
+        $categories = Category::get();
 
-        return response()->json($materails, Response::HTTP_OK);
+        return response()->json($categories, Response::HTTP_OK);
     }
 
     /**
@@ -39,29 +39,23 @@ class MaterialController extends Controller
     public function store(Request $request)
     {
         try{
-            $material = new Material();
-            $material->name = $request->name;
-            $material->cost = $request->cost;
-            $material->unit_id = $request->unit;
-            $material->vat_rate = $request->vat_rate;
-            $material->vat = $request->vat;
-            $material->quantity = $request->quantity;
-            $material->save();
+            $category = new Category();
+            $category->category_name = $request->category_name;
+            $category->save();
 
-            return response()->json(['success','Materail has been created successfully!'], Response::HTTP_CREATED);
+            return response()->json(['success','Category has been created successfully!'], Response::HTTP_CREATED);
         }catch(\Exception $e){
-            // return response()->json(['error','Something is wrong'], Response::HTTP_INTERNAL_SERVER_ERROR);
-            return dd($e);
+            return response()->json(['error','Something is wrong'], Response::HTTP_INTERNAL_SERVER_ERROR);
         }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Material  $material
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Material $material)
+    public function show(Category $category)
     {
         //
     }
@@ -69,10 +63,10 @@ class MaterialController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Material  $material
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Material $material)
+    public function edit(Category $category)
     {
         //
     }
@@ -81,10 +75,10 @@ class MaterialController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Material  $material
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Material $material)
+    public function update(Request $request, Category $category)
     {
         //
     }
@@ -92,10 +86,10 @@ class MaterialController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Material  $material
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Material $material)
+    public function destroy(Category $category)
     {
         //
     }

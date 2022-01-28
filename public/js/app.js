@@ -5777,6 +5777,12 @@ var AddCustomer = react_loadable__WEBPACK_IMPORTED_MODULE_1___default()({
   },
   loading: react_loadingg__WEBPACK_IMPORTED_MODULE_5__.SemipolarLoading
 });
+var AddMaterial = react_loadable__WEBPACK_IMPORTED_MODULE_1___default()({
+  loader: function loader() {
+    return __webpack_require__.e(/*! import() */ "resources_js_app_pages_AddMaterial_js").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/AddMaterial */ "./resources/js/app/pages/AddMaterial.js"));
+  },
+  loading: react_loadingg__WEBPACK_IMPORTED_MODULE_5__.SemipolarLoading
+});
 
 function App() {
   var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_8__.useLocation)();
@@ -5799,6 +5805,9 @@ function App() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Routes, {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
+        path: "/add-material",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(AddMaterial, {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
         path: "/add-customers",
         element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(AddCustomer, {})
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
@@ -6709,9 +6718,9 @@ function Sidebar(_ref) {
                     })
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
                     className: "lg:hidden lg:sidebar-expanded:block 2xl:block",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("ul", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("ul", {
                       className: "pl-9 mt-1 ".concat(!open && 'hidden'),
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
                         className: "mb-1 last:mb-0",
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.NavLink, {
                           exact: "true",
@@ -6719,10 +6728,32 @@ function Sidebar(_ref) {
                           className: "block text-gray-400 hover:text-gray-200 transition duration-150 truncate",
                           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
                             className: "text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200",
-                            children: "All Production"
+                            children: "All Product"
                           })
                         })
-                      })
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+                        className: "mb-1 last:mb-0",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.NavLink, {
+                          exact: "true",
+                          to: "/add-product",
+                          className: "block text-gray-400 hover:text-gray-200 transition duration-150 truncate",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                            className: "text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200",
+                            children: "Add Product"
+                          })
+                        })
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+                        className: "mb-1 last:mb-0",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.NavLink, {
+                          exact: "true",
+                          to: "/add-material",
+                          className: "block text-gray-400 hover:text-gray-200 transition duration-150 truncate",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                            className: "text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200",
+                            children: "Material"
+                          })
+                        })
+                      })]
                     })
                   })]
                 });
@@ -102877,7 +102908,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_app_pages_Dashboard_js":1,"resources_js_app_pages_BalanceSheet_js":1,"resources_js_app_pages_Journal_js":1,"resources_js_app_pages_Transaction_js":1,"resources_js_app_pages_Configuration_js":1,"resources_js_app_pages_Region_js":1,"resources_js_app_pages_Country_js":1,"resources_js_app_pages_Unit_js":1,"resources_js_app_pages_Industry_js":1,"resources_js_app_pages_Currency_js":1,"resources_js_app_pages_Customer_js":1,"resources_js_app_pages_AddCustomer_js":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_app_pages_Dashboard_js":1,"resources_js_app_pages_BalanceSheet_js":1,"resources_js_app_pages_Journal_js":1,"resources_js_app_pages_Transaction_js":1,"resources_js_app_pages_Configuration_js":1,"resources_js_app_pages_Region_js":1,"resources_js_app_pages_Country_js":1,"resources_js_app_pages_Unit_js":1,"resources_js_app_pages_Industry_js":1,"resources_js_app_pages_Currency_js":1,"resources_js_app_pages_Customer_js":1,"resources_js_app_pages_AddCustomer_js":1,"resources_js_app_pages_AddMaterial_js":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

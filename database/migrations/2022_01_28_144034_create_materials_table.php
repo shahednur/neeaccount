@@ -22,6 +22,8 @@ class CreateMaterialsTable extends Migration
             $table->boolean('vat')->default(1);
             $table->integer('quantity')->default(0);
             $table->timestamps();
+
+            $table->foreign('unit_id')->references('id')->on('units')->onDelete('cascade');
         });
     }
 
