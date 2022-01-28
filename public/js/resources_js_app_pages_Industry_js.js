@@ -390,7 +390,7 @@ function Unit() {
                         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                           scope: "col",
                           className: "text-sm font-medium text-white px-6 py-4 border-r",
-                          children: "Unit Name"
+                          children: "Industry Name"
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                           scope: "col",
                           className: "text-sm font-medium text-white px-6 py-4 border-r",

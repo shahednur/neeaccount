@@ -1,11 +1,9 @@
 import React, { useState, useMemo } from 'react';
-import { useConfData } from '../hooks/ConfHook';
+import { useCustomerData } from '../hooks/CustomerHook';
 
 import Sidebar from '../partials/Sidebar';
 import Header from '../partials/Header';
 import WelcomeBanner from '../partials/dashboard/WelcomeBanner';
-import ConfTable from '../components/ConfTable';
-import ConfForm from '../components/ConfForm';
 import Loader from '../components/Loader';
 
 
@@ -24,7 +22,7 @@ function Customer() {
     console.log(error);
   }
 
-  const { isLoading, data, isError, error, refetch} = useConfData(onSuccess, onError);
+  const { isLoading, data, isError, error, refetch} = useCustomerData(onSuccess, onError);
 
 
   if (isLoading) {
@@ -103,10 +101,25 @@ function Customer() {
                                 {item.name}
                               </td>
                               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
-                                {item.classification}
+                                {item.email}
                               </td>
                               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
-                                {item.account_key}
+                                {item.phone}
+                              </td>
+                              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+                                {item.zip_code}
+                              </td>
+                              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+                                {item.city}
+                              </td>
+                              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+                                {item.region.name}
+                              </td>
+                              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+                                {item.country.name}
+                              </td>
+                              <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+                                {item.industry.name}
                               </td>
                               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                               <button type="button"

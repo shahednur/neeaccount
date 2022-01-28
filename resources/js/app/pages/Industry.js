@@ -68,7 +68,7 @@ function Unit() {
                         <thead className="border-b bg-gray-400">
                           <tr>
                             <th scope="col" className="text-sm font-medium text-white px-6 py-4 border-r">
-                              Unit Name
+                              Industry Name
                             </th>
                             <th scope="col" className="text-sm font-medium text-white px-6 py-4 border-r">
                               Edit

@@ -9,6 +9,7 @@ use App\Http\Controllers\CountryController;
 use App\Http\Controllers\UnitController;
 use App\Http\Controllers\IndustryController;
 use App\Http\Controllers\CurrencyController;
+use App\Http\Controllers\CustomerController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -38,6 +39,8 @@ Route::get('/industry', [IndustryController::class, 'index'])->name('industry.in
 Route::post('/industry/new',[IndustryController::class, 'store'])->name('industry.store');
 Route::get('/currency', [CurrencyController::class, 'index'])->name('currency.index');
 Route::post('/currency/new', [CurrencyController::class, 'store'])->name('currency.store');
+Route::post('/customer/new', [CustomerController::class, 'store'])->name('customer.store');
+Route::get('/customers', [CustomerController::class, 'index'])->name('customer.index');
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
