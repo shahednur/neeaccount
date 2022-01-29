@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class OrderController extends Controller
 {
@@ -14,7 +15,9 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $orders = Order::with('customer')->get();
+
+        return response()->json($orders, Response::HTTP_OK);
     }
 
     /**
@@ -35,7 +38,24 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $order = new Order();
+            $order->customer_id = $request->customer_id;
+            $order->quantity = $request->quantity;
+            $order->sub_total = $request->sub_total;
+            $order->vat = $request->vat;
+            $order->due = $request->due;
+            $order->total = $request->total;
+            $order->pay = $request->pay;
+            $order->order_date = $request->order_date;
+            $order->order_month = $request->order_month;
+            $order->order_year = $request->order_year;
+            $order->save();
+
+            return response()->json(['success', 'Order has been created successfully!'], Response::HTTP_CREATED);
+        }catch(\Exception $e){
+            return response()->json(['error','Something is wrong!'], Response::HTTP_INTERNAL-SERVER_ERROR);
+        }
     }
 
     /**

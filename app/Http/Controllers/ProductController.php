@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class ProductController extends Controller
 {
@@ -14,7 +15,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::with('category','supplier')->get();
+
+        return response()->json($products, Response::HTTP_OK);
     }
 
     /**
@@ -35,7 +38,23 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $product = new Product();
+            $product->name = $request->name;
+            $product->category_id = $request->category;
+            $product->supplier_id = $request->supplier;
+            $product->product_code = $request->product_code;
+            $product->buying_price = $request->buying_price;
+            $product->selling_price = $request->selling_price;
+            $product->buying_date = $request_buying_date;
+            $product->image = $request->image;
+            $product->product_quantity = $request->product_quantity;
+            $product->save();
+
+            return response()->json(['success','Product has been created successfully!'], Response::HTTP_CREATED);
+        }catch(\Exception $e){
+            return response()->json(['error','Something is wrong'], Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
     }
 
     /**

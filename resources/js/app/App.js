@@ -67,6 +67,10 @@ const AddMaterial = Loadable({
   loader: () => import('./pages/AddMaterial'),
   loading: SemipolarLoading,
 });
+const AddOrder = Loadable({
+  loader: () => import('./pages/AddOrder'),
+  loading: SemipolarLoading,
+});
 
 function App() {
 
@@ -81,6 +85,7 @@ function App() {
   return (
     <>
       <Routes>
+        <Route path="/add-order" element={<AddOrder />} />
         <Route path="/add-material" element={<AddMaterial />} />
         <Route path="/add-customers" element={<AddCustomer />} />
         <Route path="/customers" element={<Customer />} />

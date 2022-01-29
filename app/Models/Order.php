@@ -19,8 +19,6 @@ class Order extends Model
         'pay',
         'due',
         'order_date',
-        'order_month',
-        'order_year'
     ];
 
     public function customer()

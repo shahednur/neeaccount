@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Salary;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class SalaryController extends Controller
 {
@@ -14,7 +15,9 @@ class SalaryController extends Controller
      */
     public function index()
     {
-        //
+        $salary = Salary::with('employee')->get();
+
+        return response()->json($salary, Response::HTTP_OK);
     }
 
     /**
@@ -35,7 +38,19 @@ class SalaryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $salary = new Salary();
+            $salary->employee_id = $request->employee_id;
+            $salary->amount = $request->amount;
+            $salary->salary_date = $request->salary_date;
+            $salary->month = $request->month;
+            $salary->year = $request->year;
+            $salary->save();
+
+            return response()->json(['success','Salary has been created successfully!'], Response::HTTP_CREATED);
+        }catch(\Exception $e){
+            return response()->json(['error','Something is wrong!'], Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
     }
 
     /**

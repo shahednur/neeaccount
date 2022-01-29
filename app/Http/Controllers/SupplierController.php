@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Supplier;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class SupplierController extends Controller
 {
@@ -14,7 +15,9 @@ class SupplierController extends Controller
      */
     public function index()
     {
-        //
+        $supplier = Supplier::get();
+
+        return response()->json($supplier, Response::HTTP_OK);
     }
 
     /**
@@ -35,7 +38,19 @@ class SupplierController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $supplier = new Supplier();
+            $supplier->name = $request->name;
+            $supplier->email = $request->email;
+            $supplier->phone = $request->phone;
+            $supplier->image = $request->image;
+            $supplier->companyName = $request->companyName;
+            $supplier->save();
+
+            return response()->json(['success','Supplier has been created successfully!'], Response::HTTP_CREATED);
+        }catch(\Exception $e){
+            return response()->json(['error','Something is wrong!'], Response::HTTP_INTERNAL_SERVER_ERROR); 
+        }
     }
 
     /**

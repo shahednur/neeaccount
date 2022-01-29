@@ -11,6 +11,11 @@ use App\Http\Controllers\IndustryController;
 use App\Http\Controllers\CurrencyController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\MaterialController;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SalaryController;
+use App\Http\Controllers\SupplierController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -44,6 +49,16 @@ Route::post('/customer/new', [CustomerController::class, 'store'])->name('custom
 Route::get('/customers', [CustomerController::class, 'index'])->name('customer.index');
 Route::get('/materials', [MaterialController::class, 'index'])->name('material.index');
 Route::post('/material/new', [MaterialController::class, 'store'])->name('material.store');
+Route::get('/employees', [EmployeeController::class, 'index'])->name('employee.index');
+Route::post('/employee/new', [EmployeeController::class, 'store'])->name('employee.store');
+Route::get('/orders', [OrderController::class, 'index'])->name('order.index');
+Route::post('/order/new',[OrderController::class, 'store'])->name('order.store');
+Route::get('/products', [ProductController::class, 'index'])->name('product.index');
+Route::post('/product/new', [ProductController::class, 'store'])->name('product.store');
+Route::get('/salaries', [SalaryController::class, 'index'])->name('salary.index');
+Route::post('/salary/new', [SalaryController::class, 'store'])->name('salary.store');
+Route::get('/suppliers', [SupplierController::class, 'index'])->name('supplier.index');
+Route::post('/supplier/new', [SupplierController::class, 'store'])->name('supplier.store');
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

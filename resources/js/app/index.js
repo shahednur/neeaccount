@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { QueryClient, QueryClientProvider } from 'react-query'
+import "react-datepicker/dist/react-datepicker.css";
 
 const queryClient = new QueryClient()
 

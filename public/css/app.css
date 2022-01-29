@@ -846,6 +846,9 @@ select {
 .inline-block {
   display: inline-block;
 }
+.inline {
+  display: inline;
+}
 .flex {
   display: flex;
 }
@@ -980,6 +983,12 @@ select {
 }
 .max-w-2xl {
   max-width: 42rem;
+}
+.max-w-md {
+  max-width: 28rem;
+}
+.max-w-lg {
+  max-width: 32rem;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -2070,6 +2079,18 @@ select {
 
   .xl\:w-60 {
     width: 15rem;
+  }
+
+  .xl\:w-40 {
+    width: 10rem;
+  }
+
+  .xl\:w-32 {
+    width: 8rem;
+  }
+
+  .xl\:w-24 {
+    width: 6rem;
   }
 }
     @media (min-width: 1536px) {

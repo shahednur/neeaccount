@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import DatePicker from "react-datepicker";
 import { useAddTransaction } from '../hooks/TransactionHook'
 
-import "react-datepicker/dist/react-datepicker.css";
 
 const TransactionForm = () => {
   const [startDate, setStartDate] = useState(new Date());

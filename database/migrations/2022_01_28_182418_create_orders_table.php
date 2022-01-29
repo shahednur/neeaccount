@@ -23,8 +23,6 @@ class CreateOrdersTable extends Migration
             $table->float('pay')->nullable();
             $table->float('due')->nullable();
             $table->date('order_date')->nullable();
-            $table->date('order_month')->nullable();
-            $table->date('order_year')->nullable();
             $table->timestamps();
         });
     }
